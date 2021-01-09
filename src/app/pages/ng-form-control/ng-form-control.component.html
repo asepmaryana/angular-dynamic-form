@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-12 mt-4">
+    <h4 class="mb-3">Register Form</h4>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="" formControlName="firstName" required/>
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="" formControlName="lastName" required/>
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Qty">Qty</label>
+          <input type="number" class="form-control" id="qty" placeholder="" value="" formControlName="qty" required/>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Price">Price</label>
+          <input type="number" class="form-control" id="price" placeholder="" value="" formControlName="price" required/>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="SubTotal">Subtotal</label>
+          <input type="number" class="form-control" id="subTotal" placeholder="" value="" formControlName="subTotal" required/>
+        </div>
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-primary btn-lg btn-block" type="button" (click)="onSetDefault()">Set Default</button>
+        </div>
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-primary btn-lg btn-block" type="button" (click)="onCall()">Calling</button>
+        </div>
+        <div class="col-md-6 mb-3">
+          &nbsp;
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

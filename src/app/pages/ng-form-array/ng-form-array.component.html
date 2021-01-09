@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-12 mt-4">
+    <h4 class="mb-3">Order Form</h4>
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <div formArrayName="orders">
+        <div class="row" *ngFor="let order of orders.controls; let i=index" [formGroupName]="i">
+          <div class="col-md-2 mb-3">
+            <label for="Id">Id </label>
+            <br>
+            {{rows[i].id}}
+            <input type="hidden" formControlName="id"/>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="Item">Item</label>
+            <br>
+            {{rows[i].item}}
+            <input type="hidden" formControlName="item"/>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="Qty">Qty</label>
+            <input type="number" formControlName="qty"/>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="Price">Price</label>
+            <input type="number" formControlName="price"/>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="SubTotal">Sub Total</label>
+            <input type="number" formControlName="subTotal"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-primary btn-lg btn-block" type="reset">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
